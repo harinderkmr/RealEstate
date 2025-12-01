@@ -1,0 +1,108 @@
+.services-home {
+	.box {
+		background: $white;
+
+		@media (min-width: 992px) {
+			flex: 0 0 20%;
+			width: 20%;
+		}
+
+		.img {
+			height: 100px;
+			width: 100px;
+		}
+
+		h2 {
+			color: $blue;
+			font-family: $copy;
+			font-size: 24px;
+			letter-spacing: 2px;
+			min-height: 100px;
+		}
+
+		.cta {
+			max-width: 175px;
+		}
+
+		&:nth-child(2n) {
+			background: $orange;
+
+			h2 {
+				color: $blue;
+			}
+
+			.cta {
+				background: #fff;
+				color: $orange;
+				max-width: 175px;
+			}
+		}
+	}
+}
+
+.benefits {
+	h4 {
+		color: #fff;
+		font: 22px 'Libre Caslon Text', serif;
+		margin-bottom: 15px;
+		text-align: center;
+
+		@media (min-width: 768px) {
+			font-size: 24px;
+			margin-bottom: 30px;
+		}
+	}
+
+	ul {
+		li {
+			color: #fff;
+			margin-bottom: 15px;
+
+			ol {
+				list-style: circle;
+				margin-top: 15px;
+			}
+		}
+	}
+}
+
+.exercises-block {
+	.exercises-box {
+		overflow: hidden;
+		position: relative;
+
+		img {
+			width: 100%;
+		}
+
+		.hover-block {
+			background: rgba(0, 48, 91, 0.6);
+			bottom: -110px;
+			padding: 20px;
+			position: absolute;
+			right: 0;
+			transition: 0.5s ease;
+			width: 100%;
+
+			p {
+				color: #fff;
+				font-size: 23px;
+				text-transform: uppercase;
+			}
+
+			ul {
+				li {
+					color: #fff;
+					font-size: 14px;
+				}
+			}
+		}
+
+		&:hover {
+			.hover-block {
+				bottom: 0;
+				height: auto;
+			}
+		}
+	}
+}

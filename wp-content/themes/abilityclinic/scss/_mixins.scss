@@ -1,0 +1,32 @@
+@import 'variables';
+
+@mixin cta {
+	background: $orange;
+	border-radius: 120px;
+	color: $white;
+	font: 14px/1 $copy;
+	padding: 10px 30px;
+	text-decoration: none;
+
+	@media (min-width: 768px) {
+		font-size: 16px;
+	}
+
+	&.dark-orange {
+		background: #cc4e05;
+	}
+
+	&.solid {
+		border-radius: 0;
+		min-width: 175px;
+		&:hover {
+			background: $orange;
+			color: $white;
+		}
+	}
+
+	&:hover {
+		background: darken($orange, 40%);
+		color: $white;
+	}
+}

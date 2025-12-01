@@ -1,0 +1,175 @@
+/* ============================
+   Base Popup Overlay
+============================ */
+#custom-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+#custom-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ============================
+   Popup Content
+============================ */
+#custom-popup .popup-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  animation: popIn 0.4s ease forwards;
+}
+#custom-popup.closing .popup-content {
+  animation: popOut 0.3s ease forwards;
+}
+
+/* Close Button */
+#custom-popup .popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ============================
+   Animations
+============================ */
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes popOut {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(0.8); opacity: 0; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+@keyframes slideOutLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+@keyframes slideOutRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+@keyframes dropDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+@keyframes dropUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+/* ============================
+   Variants
+============================ */
+
+/* Banner */
+#custom-popup.banner {
+  top: 0;
+  left: 0;
+  height: auto;
+  background: transparent;
+  justify-content: center;
+}
+#custom-popup.banner .popup-content {
+  max-width: 100%;
+  width: 100%;
+  border-radius: 0;
+  animation: dropDown 0.4s ease forwards;
+}
+#custom-popup.banner.closing .popup-content {
+  animation: dropUp 0.3s ease forwards;
+}
+
+/* Slide Left */
+#custom-popup.slide-left {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#custom-popup.slide-left .popup-content {
+  height: 100%;
+  max-width: 320px;
+  border-radius: 0;
+  animation: slideInLeft 0.4s ease forwards;
+}
+#custom-popup.slide-left.closing .popup-content {
+  animation: slideOutLeft 0.3s ease forwards;
+}
+
+/* Slide Right */
+#custom-popup.slide-right {
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+#custom-popup.slide-right .popup-content {
+  height: 100%;
+  max-width: 320px;
+  border-radius: 0;
+  animation: slideInRight 0.4s ease forwards;
+}
+#custom-popup.slide-right.closing .popup-content {
+  animation: slideOutRight 0.3s ease forwards;
+}
+
+/* ============================
+   Promo Template Styles
+============================ */
+
+/* Flash Sale */
+#custom-popup.flash-sale .popup-content {
+  border: 3px solid #ff4d4f;
+}
+#custom-popup.flash-sale .countdown {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ff4d4f;
+  margin-top: 1rem;
+}
+
+/* Coupon */
+#custom-popup.coupon .popup-content {
+  border: 2px dashed #0073e6;
+}
+#custom-popup.coupon .promo-code {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0073e6;
+  background: #f0f8ff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Exit Intent Promo */
+#custom-popup.exit .popup-content {
+  border: 2px solid #ff9800;
+}
